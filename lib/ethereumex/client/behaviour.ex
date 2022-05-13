@@ -34,14 +34,14 @@ defmodule Ethereumex.Client.Behaviour do
   @callback eth_send_raw_transaction(binary(), keyword()) :: {:ok, binary()} | error
   @callback eth_call(map, binary(), keyword()) :: {:ok, binary()} | error
   @callback eth_estimate_gas(map(), keyword()) :: {:ok, binary()} | error
-  @callback eth_get_block_by_hash(binary(), boolean(), keyword()) :: {:ok, map()} | error
-  @callback eth_get_block_by_number(binary(), boolean(), keyword()) :: {:ok, map()} | error
-  @callback eth_get_transaction_by_hash(binary(), keyword()) :: {:ok, map()} | error
+  @callback eth_get_block_by_hash(binary(), boolean(), keyword()) :: {:ok, map() | nil} | error
+  @callback eth_get_block_by_number(binary(), boolean(), keyword()) :: {:ok, map() | nil} | error
+  @callback eth_get_transaction_by_hash(binary(), keyword()) :: {:ok, map() | nil} | error
   @callback eth_get_transaction_by_block_hash_and_index(binary(), binary(), keyword()) ::
               {:ok, map()} | error
   @callback eth_get_transaction_by_block_number_and_index(binary(), binary(), keyword()) ::
               {:ok, binary()} | error
-  @callback eth_get_transaction_receipt(binary(), keyword()) :: {:ok, map()} | error
+  @callback eth_get_transaction_receipt(binary(), keyword()) :: {:ok, map() | nil} | error
   @callback eth_get_uncle_by_block_hash_and_index(binary(), binary(), keyword()) ::
               {:ok, map()} | error
   @callback eth_get_uncle_by_block_number_and_index(binary(), binary(), keyword()) ::
