@@ -35,7 +35,8 @@ defmodule Ethereumex.Client.Behaviour do
   @callback eth_call(map, binary(), keyword()) :: {:ok, binary()} | error
   @callback eth_estimate_gas(map(), keyword()) :: {:ok, binary()} | error
   @callback eth_get_block_by_hash(binary(), boolean(), keyword()) :: {:ok, map() | nil} | error
-  @callback eth_get_block_by_number(binary(), boolean(), keyword()) :: {:ok, map() | nil} | error
+  @callback eth_get_block_by_number(non_neg_integer() | binary(), boolean(), keyword()) ::
+              {:ok, map() | nil} | error
   @callback eth_get_transaction_by_hash(binary(), keyword()) :: {:ok, map() | nil} | error
   @callback eth_get_transaction_by_block_hash_and_index(binary(), binary(), keyword()) ::
               {:ok, map()} | error
