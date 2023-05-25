@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.4 - 2022-12-07
+*  Update finch to 0.14 (https://github.com/mana-ethereum/ethereumex/pull/141)
+
+## 0.10.3 - 2022-09-15
+* Update jason to 1.4 (https://github.com/mana-ethereum/ethereumex/pull/137)
+
 ## 0.10.2 - 2022-08-02
 * Fix typespec in HttpClient (https://github.com/mana-ethereum/ethereumex/pull/134)
 
