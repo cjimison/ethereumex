@@ -13,6 +13,8 @@ defmodule Ethereumex.Client.BaseClient do
     quote location: :keep do
       @behaviour Behaviour
       @type error :: Behaviour.error()
+      @type param_base :: float | integer | boolean | binary
+      @type param :: param_base | [param_base] | map
 
       @impl true
       def web3_client_version(opts \\ []) do
@@ -428,7 +430,7 @@ defmodule Ethereumex.Client.BaseClient do
         "shh_getMessages" |> request(params, opts)
       end
 
-      @spec add_request_info(binary, [boolean() | binary | map | [binary]]) :: map
+      @spec add_request_info(binary, [param]) :: map
       defp add_request_info(method_name, params \\ []) do
         %{}
         |> Map.put("method", method_name)
