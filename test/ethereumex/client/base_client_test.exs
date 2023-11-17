@@ -91,6 +91,7 @@ defmodule Ethereumex.Client.BaseClientTest do
   test ".net_listening/0", do: Helpers.check("net_listening")
   test ".eth_protocol_version/0", do: Helpers.check("eth_protocol_version")
   test ".eth_syncing/0", do: Helpers.check("eth_syncing")
+  test ".eth_chainId/0", do: Helpers.check("eth_chainId")
   test ".eth_coinbase/0", do: Helpers.check("eth_coinbase")
   test ".eth_mining/0", do: Helpers.check("eth_mining")
   test ".eth_hashrate/0", do: Helpers.check("eth_hashrate")
